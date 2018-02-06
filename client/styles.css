@@ -8,7 +8,7 @@
     display:flex;
     flex-wrap: wrap;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .section {
@@ -17,21 +17,20 @@
     justify-content: center;
 }
 
+/*///////////////
+// Header
+///////////////////////////////////////////////////////////////////////////////*/
+
 .menu-container {
     background-color: #59d9;
-}
-
-.menu {
-    display: flex;
-    justify-content: space-between;
-    width: 900px;
-    padding: 30px;
+    padding: 3vh;
 }
 
 .menu-item {
     color: #fff;
     text-decoration: none;
-    font-size: 1.4em;
+    font-size: 1.2em;
+    margin: 20px 20px 20px 0;
 }
 
 .menu-item:hover {
@@ -48,4 +47,47 @@
 
 .first-item {
     margin-left: auto;
+}
+
+/*///////////////
+// Content
+///////////////////////////////////////////////////////////////////////////////*/
+
+.content {
+    max-width: 900px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.content article {
+    color: #6c6c7c;
+    background-color: rgba(85, 153, 221, 0.11);
+    padding: 6vh;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.content article h1,
+.content article h2 {    
+    margin: 1vh 0 3vh 0;
+    color: #b0b7b9;
+}
+
+.content article p {
+    font-size: 1em;
+    line-height: 1.8em;
+    margin-bottom: 2.5em;
+}
+.content article h1 { font-size: 2em; }
+.content article h2 { font-size: 1.6em; }
+
+/*///////////////
+// Footer
+///////////////////////////////////////////////////////////////////////////////*/
+
+.footer {
+    color: #fff; 
+    padding: 5vh 0;
 }
