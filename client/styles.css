@@ -22,13 +22,14 @@
 ///////////////////////////////////////////////////////////////////////////////*/
 
 .menu-container {
-    background-color: #59d9;
+    background-color: #5599dd88;
     padding: 3vh;
 }
 
 .menu-item {
     color: #fff;
     text-decoration: none;
+    user-select: none;
     font-size: 1.2em;
     margin: 20px 20px 20px 0;
 }
@@ -47,6 +48,16 @@
 
 .first-item {
     margin-left: auto;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .section {
+    padding-top: 102px;
 }
 
 /*///////////////

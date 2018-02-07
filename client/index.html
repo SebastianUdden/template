@@ -9,17 +9,17 @@
 </head>
 <body>
     <div class="page">
-        <header id="Home" class="section menu-container">
+        <header id="Menu" class="section menu-container">
             <nav class="menu">
-                <a href="#Home" class="menu-item">Home</a>
-                <a href="#About" class="menu-item list-item first-item">About</a>
-                <a href="#Contact" class="menu-item list-item">Contact</a>
+                <a href="#Menu" onclick="test('Home'); return false;" class="menu-item">Home</a>
+                <a href="#About" onclick="test('About'); return false;" class="menu-item list-item first-item">About</a>
+                <a href="#Contact" onclick="test('Contact'); return false;" class="menu-item list-item">Contact</a>
             </nav>
         </header>
         <section class="section content-container">
             <div class="content">
                 <article>
-                    <h1>Home</h1>
+                    <h1 id="Home">Home</h1>
                     <p>Lorem ipsum dolor amet ennui hexagon sartorial williamsburg +1. Offal pour-over bespoke sustainable biodiesel. Tumblr YOLO 8-bit vegan messenger bag. Pug umami tumblr live-edge celiac salvia. Beard sustainable umami hoodie hashtag migas scenester 3 wolf moon fam chicharrones kogi readymade tattooed. Fashion axe try-hard helvetica truffaut, pop-up hammock franzen celiac tattooed.</p>
                         
                     <p>Marfa pitchfork mixtape fam fashion axe. +1 actually shaman, pinterest cornhole fam sriracha asymmetrical. Slow-carb unicorn tattooed marfa swag pour-over. Taxidermy DIY 8-bit brooklyn seitan before they sold out. Gochujang cray fanny pack flannel, ethical kickstarter tumblr lo-fi taxidermy snackwave keytar kinfolk vegan vice.</p>
@@ -50,10 +50,11 @@
         </section>
         <footer id="Contact" class="section menu-container">
             <nav class="menu footer">
-                <a href="#Home" class="menu-item">Go to top</a>
+                <a href="#Menu" onclick="test('Menu'); return false;" class="menu-item">Go to top</a>
                 <a>Sebastian Uddén</a>
             </nav>
         </footer>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
