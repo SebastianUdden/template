@@ -8,7 +8,7 @@
     display:flex;
     flex-wrap: wrap;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .section {
@@ -53,11 +53,10 @@
 .sticky {
     position: fixed;
     top: 0;
-    width: 100%;
 }
 
 .sticky + .section {
-    padding-top: 102px;
+    padding-top: 10vh;
 }
 
 /*///////////////
@@ -75,7 +74,7 @@
 .content article {
     color: #6c6c7c;
     background-color: rgba(85, 153, 221, 0.11);
-    padding: 5vh;
+    padding: 6vw;
     margin: 20px 0;
     border-radius: 8px;
 }
@@ -88,8 +87,8 @@
 
 .content article p {
     font-size: 1em;
-    line-height: 1.8em;
-    margin-bottom: 2.5em;
+    line-height: 1.9em;
+    margin-bottom: 3em;
 }
 .content article h1 { font-size: 2em; }
 .content article h2 { font-size: 1.6em; }
@@ -102,3 +101,9 @@
     color: #fff; 
     padding: 5vh 0;
 }
+
+@media only screen and (min-width: 900px) {
+    .content article {
+        padding: 5vw;
+    }
+} 
