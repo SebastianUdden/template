@@ -35,10 +35,12 @@
                 HEADER.classList.remove("fade");
             }
         } else {
-            //downward - code here
-            HEADER.classList.remove("sticky");
-            HEADER.classList.remove("topSlide");
-            HEADER.classList.add("fade");        
+            //downward - code here    
+            if (window.pageYOffset > 160) {
+                HEADER.classList.remove("sticky");
+                HEADER.classList.remove("topSlide");
+                HEADER.classList.add("fade");        
+            }
         }
         lastScrollPosition = newScrollPosition;
     }
