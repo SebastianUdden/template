@@ -1,6 +1,9 @@
 # template
 
 Template for a content based web-page
+* Fully responsive
+* Flowing scroll
+* Sliding navbar
 
 ## Usage
 
