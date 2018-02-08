@@ -68,8 +68,8 @@
                     count++;   
                     currY = 200 * (0.5 - 0.5 * Math.cos(count * scrollStep));
                     if ((document.documentElement.scrollTop || document.body.scrollTop) <= (targetY - 10)) { clearInterval(scrollInterval); }
-                    document.documentElement.scrollTop -= currY;   
-                    // document.body.scrollTop -= currY;
+                    document.documentElement.scrollTop -= currY; 
+                    document.body.scrollTop -= currY;
                 } 
                 else { clearInterval(scrollInterval); }
             }, 10);
@@ -81,7 +81,7 @@
                     currY = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
                     if (currY >= (targetY - 140)) { clearInterval(scrollInterval); }
                     document.documentElement.scrollTop = currY;
-                    // document.body.scrollTop -= currY;
+                    document.body.scrollTop -= currY;
                 } 
                 else { clearInterval(scrollInterval); }
             }, 10);
