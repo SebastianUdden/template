@@ -53,31 +53,33 @@
         if (lastClick >= (Date.now() - delay)) { return };
         lastClick = Date.now();
 
-        let start = document.documentElement.scrollTop;
+        let start = document.documentElement.scrollTop || document.body.scrollTop;
         let diff = targetY - (document.documentElement.scrollTop || document.body.scrollTop ||  0);            
         let scrollStep = Math.PI / (duration / 10);
         let count = 0;
         let currY = 0;
 
-        if ((targetY) <= (document.documentElement.scrollTop)) {
+        if ((targetY) <= (document.documentElement.scrollTop || document.body.scrollTop)) {
             /* Scroll Up */
             scrollInterval = setInterval(() => {                
-                if (document.documentElement.scrollTop != 0) {
+                if ((document.documentElement.scrollTop || document.body.scrollTop) != 0) {
                     count++;   
-                    currY = 100 * (0.5 - 0.5 * Math.cos(count * scrollStep));
-                    if (document.documentElement.scrollTop <= (targetY - 10)) { clearInterval(scrollInterval); }
-                    document.documentElement.scrollTop -= currY;                   
+                    currY = 200 * (0.5 - 0.5 * Math.cos(count * scrollStep));
+                    if ((document.documentElement.scrollTop || document.body.scrollTop) <= (targetY - 10)) { clearInterval(scrollInterval); }
+                    document.documentElement.scrollTop -= currY;   
+                    document.body.scrollTop -= currY;
                 } 
                 else { clearInterval(scrollInterval); }
             }, 10);
         } else {
             /* Scroll Down */
             scrollInterval = setInterval(() => {                
-                if (document.body.scrollTop != targetY) {
+                if ((document.documentElement.scrollTop || document.body.scrollTop) != targetY) {
                     count++;
                     currY = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
                     if (currY >= (targetY - 140)) { clearInterval(scrollInterval); }
                     document.documentElement.scrollTop = currY;
+                    document.body.scrollTop -= currY;
                 } 
                 else { clearInterval(scrollInterval); }
             }, 10);
