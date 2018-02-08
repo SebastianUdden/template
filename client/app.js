@@ -46,6 +46,11 @@
     goTo = (elementID) => {
         alert('Going to: ' + elementID);
         let target = document.getElementById(elementID);
+        if (document.documentElement.scrollTop !== undefined) {
+            alert('document.documentElement.scrollTop exists: ' + document.documentElement.scrollTop);
+        } else if (window.pageYOffset !== undefined) {
+            alert('window.pageYOffset exists: ' + window.pageYOffset);
+        }
         scrollTo(target.offsetTop, 500);
     }
 
