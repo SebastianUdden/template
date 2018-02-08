@@ -79,7 +79,7 @@
                 if ((document.documentElement.scrollTop || document.body.scrollTop) != targetY) {
                     count++;
                     currY = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
-                    if (currY >= (targetY - 70)) { clearInterval(scrollInterval); }
+                    if (currY >= (targetY - 200)) { clearInterval(scrollInterval); }
                     document.documentElement.scrollTop = currY;
                     document.body.scrollTop = currY;
                 } 
