@@ -63,7 +63,6 @@
 
         if ((targetY) <= (document.documentElement.scrollTop || document.body.scrollTop)) {
             /* Scroll Up */
-            alert('Up');
             scrollInterval = setInterval(() => {                
                 if ((document.documentElement.scrollTop || document.body.scrollTop) != 0) {
                     count++;   
@@ -76,11 +75,10 @@
             }, 10);
         } else {
             /* Scroll Down */
-            alert('Down');
             scrollInterval = setInterval(() => {                
                 if ((document.documentElement.scrollTop || document.body.scrollTop) != targetY) {
                     count++;
-                    currY = 200 * (0.5 - 0.5 * Math.cos(count * scrollStep));
+                    currY = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
                     if (currY >= (targetY - 140)) { clearInterval(scrollInterval); }
                     document.documentElement.scrollTop = currY;
                     document.body.scrollTop = currY;
