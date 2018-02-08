@@ -7,14 +7,20 @@
 .page {
     display:flex;
     flex-wrap: wrap;
+    min-width: 350px;
     font-family: 'Roboto', sans-serif;
     font-size: 17px;
 }
 
 .section {
     width: 100%;
+    min-width: 350px;
     display: flex;
     justify-content: center;
+}
+
+.transition {
+    transition: 0.5s ease-in-out all;
 }
 
 /*///////////////
@@ -29,7 +35,7 @@
 
 .menu {
     display: flex;
-    width: 92%;
+    width: 92%;    
     justify-content: space-between;
 }
 
@@ -49,10 +55,6 @@
     color: #bdddee;
 }
 
-/* .list-item {
-   margin-left: 20px;
-} */
-
 .first-item {
     margin-left: auto;
 }
@@ -66,14 +68,28 @@
     left: 20px;
 }
 
+.fade {
+    position: fixed;
+    top: 0;
+    margin-top: -30vh;
+    background-color: #5599dd00;
+}
+
 .sticky {
     position: fixed;
     top: 0;
+    background-color: #5599dd88;
 }
 
-.sticky + .section {
-    padding-top: 16vh;
+.topSlide + .section {
+    transition: padding-top 0.6s ease-out;
+    padding-top: 110px;
 }
+
+.hide {
+    display: none;
+}
+
 
 /*///////////////
 // Content
@@ -113,19 +129,40 @@
 // Footer
 ///////////////////////////////////////////////////////////////////////////////*/
 
-.footer {
-    /* color: #fff;  */
-    /* padding: 5vh 0; */
-}
-
 @media only screen and (min-width: 900px) {
     .content article {
         padding: 5vw;
     }
 } 
 @media screen and (max-width: 600px) {
-    /* .menu a:not(:first-child) { display: none; }
-    .menu a.icon {
-        display: flex;
-    } */
+    #NavMenu a:not(:first-child) { display: none; }
+    #NavMenu a.icon {
+        float: right;
+        display: block;                
+    }
+    #NavMenu.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    #NavMenu a:first-child { 
+        position: absolute; 
+    }
+    #NavMenu {
+        display: block;
+        position: relative;
+    }
+    #NavMenu.responsive a:nth-child(2) {
+        margin-top: 12vh;
+    }
+    #NavMenu.responsive a:not(:first-child):not(.icon) {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+@media screen and (min-width: 600px) {
+    #NavMenu a.icon {
+        display: none;
+    }
 }
