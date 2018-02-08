@@ -44,6 +44,7 @@
     }
 
     goTo = (elementID) => {
+        alert('Going to: ', elementID);
         let target = document.getElementById(elementID);
         scrollTo(target.offsetTop, 500);
     }
