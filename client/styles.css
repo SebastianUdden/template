@@ -135,34 +135,34 @@
     }
 } 
 @media screen and (max-width: 600px) {
-    #NavMenu a:not(:first-child) { display: none; }
-    #NavMenu a.icon {
+    #Nav a:not(:first-child) { display: none; }
+    #Nav a.icon {
         float: right;
         display: block;                
     }
-    #NavMenu.responsive a.icon {
+    #Nav.responsive a.icon {
         position: absolute;
         right: 0;
         top: 0;
     }
-    #NavMenu a:first-child { 
+    #Nav a:first-child { 
         position: absolute; 
     }
-    #NavMenu {
+    #Nav {
         display: block;
         position: relative;
     }
-    #NavMenu.responsive a:nth-child(2) {
+    #Nav.responsive a:nth-child(2) {
         margin-top: 12vh;
     }
-    #NavMenu.responsive a:not(:first-child):not(.icon) {
+    #Nav.responsive a:not(:first-child):not(.icon) {
         float: none;
         display: block;
         text-align: left;
     }
 }
 @media screen and (min-width: 600px) {
-    #NavMenu a.icon {
+    #Nav a.icon {
         display: none;
     }
 }

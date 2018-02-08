@@ -1,47 +1,51 @@
-(function() {
-    myFunction = (scrollUp) => {
-        let x = document.getElementById("NavMenu");
+(() => {
+    const HEADER = document.getElementById("Header");
+    const NAV = document.getElementById("Nav");
+    let lastScrollPosition = 0;
+    let lastClick = 0;
+    
+    showMenu = (scrollUp) => {
         if (scrollUp) {
-            x.className = "menu"; 
+            NAV.className = "menu"; 
             return;
         }
-        if (x.className === "menu") {
-            x.className += " responsive";
+        if (NAV.className === "menu") {
+            NAV.className += " responsive";
         } else {
-            x.className = "menu";
+            NAV.className = "menu";
         }
     }
 
-    let lastScrollPosition = 0;
-    let header = document.getElementById("Menu");
-    let sticky = header.offsetTop;
-    let lastClick = 0;
-
-    window.onscroll = function() {addNavMenu()};
+    window.onscroll = () => {addNavMenu()};
 
     addNavMenu = () => {
         let newScrollPosition = window.scrollY;
         if (newScrollPosition < lastScrollPosition) {
             //upward - code here
-            myFunction(true);
+            showMenu(true);
             if (window.pageYOffset == 0) {
-                header.classList.remove("hide");
-                header.classList.add("sticky");
-                header.classList.add("topSlide");
-                header.classList.remove("fade");
+                HEADER.classList.remove("hide");
+                HEADER.classList.add("sticky");
+                HEADER.classList.add("topSlide");
+                HEADER.classList.remove("fade");
             }
-            if (window.pageYOffset >= sticky) {
-                header.classList.remove("hide");
-                header.classList.add("sticky");
-                header.classList.remove("fade");
+            if (window.pageYOffset >= HEADER.offsetTop) {
+                HEADER.classList.remove("hide");
+                HEADER.classList.add("sticky");
+                HEADER.classList.remove("fade");
             }
         } else {
             //downward - code here
-            header.classList.remove("sticky");
-            header.classList.remove("topSlide");
-            header.classList.add("fade");        
+            HEADER.classList.remove("sticky");
+            HEADER.classList.remove("topSlide");
+            HEADER.classList.add("fade");        
         }
         lastScrollPosition = newScrollPosition;
+    }
+
+    goTo = (elementID) => {
+        let target = document.getElementById(elementID);
+        scrollTo(target.offsetTop, 500);
     }
 
     scrollTo = (targetY, duration) => {
@@ -57,7 +61,7 @@
 
         if ((targetY) <= (document.documentElement.scrollTop)) {
             /* Scroll Up */
-            scrollInterval = setInterval(function() {                
+            scrollInterval = setInterval(() => {                
                 if (document.documentElement.scrollTop != 0) {
                     count++;   
                     currY = 100 * (0.5 - 0.5 * Math.cos(count * scrollStep));
@@ -68,7 +72,7 @@
             }, 10);
         } else {
             /* Scroll Down */
-            scrollInterval = setInterval(function() {                
+            scrollInterval = setInterval(() => {                
                 if (document.body.scrollTop != targetY) {
                     count++;
                     currY = start + diff * (0.5 - 0.5 * Math.cos(count * scrollStep));
@@ -78,10 +82,5 @@
                 else { clearInterval(scrollInterval); }
             }, 10);
         }
-    }
-
-    goTo = (elementID) => {
-        let target = document.getElementById(elementID);
-        scrollTo(target.offsetTop, 500);
-    }
+    }    
 })();
