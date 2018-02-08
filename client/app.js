@@ -23,7 +23,7 @@
         if (newScrollPosition < lastScrollPosition) {
             //upward - code here
             showMenu(true);
-            if (window.pageYOffset == 0) {
+            if (window.pageYOffset < 50) {
                 HEADER.classList.remove("hide");
                 HEADER.classList.add("sticky");
                 HEADER.classList.add("topSlide");
