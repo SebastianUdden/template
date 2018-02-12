@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+width: 600px;
+margin: 20% auto;
+border: solid 1px red;
+border-radius: 2px;
+text-align: center;
+}
+
+.contains {
+    width: 590px;
+    margin: 5% auto;
+    border: solid 1px red;
+    border-radius: 2px; 
+}
+
+.container {
+float: center;
+height: 100px;
+background-color: lightgray;
+border-radius: 2px;
+width: 570px;
+margin: 0 auto;
+}
+
+.textBox{
+    border-radius: 2px;
+    outline: none;
+}
+
+.page p {
+    text-align: center;
+    display: block;
+    background-color:lightcoral;
+    padding: 5px;
+    width: 150px;
+    margin-left: auto;
+}
+
+/*The code below is necessary so the width function works (changeWidth)!*/
+
+#hide_span,
+#txt_box {
+    font:inherit;
+    border:none;
+    margin: 5% auto; /* Should be margin: 0 but i want the textbox in the middle of the div! */
+    padding: 0;
+}
+#hide_span{
+    white-space:pre;
+}
+
+/* **************************************************************** */
+#txt_box:focus {
+    border-color: red;
+    box-shadow: 0 0 8px 0 red;
+}
+
+/* #txt_box:focus::placeholder {
+color: hsl(0, 0%, 100%);
+} */
+
+#txt_box{
+    padding-left: 23px; 
+    padding-right: 3px;
+
+}
+
+.container img {
+    position: absolute;
+    width: 15px;
+    top: 441px;
+    padding-left: 3px;
+}
+
+/* #txt_box {
+    background-image: url("img/search_icon.svg");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    padding-left: 17px;
+} */
+
+.loading-animation {
+    /* right: 460px; */
+}
+
+::placeholder {
+    opacity: 3;
+    transition: opacity 0.35s ease-in-out;
+    -moz-transition: opacity 0.35s ease-in-out;
+    -webkit-transition: opacity 0.35s ease-in-out;
+    }
+
+#txt_box:focus::placeholder {
+opacity: 0.2;
+} 
+
+#txt_box:hover::placeholder  {
+opacity: 0.2;
+}
