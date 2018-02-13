@@ -1,15 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .page {
-width: 600px;
-margin: 20% auto;
-border: solid 1px red;
-border-radius: 2px;
-text-align: center;
+    width: 600px;
+    margin: 20% auto;
+    border: solid 1px red;
+    border-radius: 2px;
+    text-align: center;
 }
 
 .contains {
@@ -20,12 +20,12 @@ text-align: center;
 }
 
 .container {
-float: center;
-height: 100px;
-background-color: lightgray;
-border-radius: 2px;
-width: 570px;
-margin: 0 auto;
+    float: center;
+    height: 100px;
+    background-color: lightgray;
+    border-radius: 2px;
+    width: 570px;
+    margin: 0 auto;
 }
 
 .textBox{
@@ -94,12 +94,12 @@ color: hsl(0, 0%, 100%);
     transition: opacity 0.35s ease-in-out;
     -moz-transition: opacity 0.35s ease-in-out;
     -webkit-transition: opacity 0.35s ease-in-out;
-    }
+}
 
 #txt_box:focus::placeholder {
-opacity: 0.2;
+    opacity: 0.2;
 } 
 
 #txt_box:hover::placeholder  {
-opacity: 0.2;
+    opacity: 0.2;
 }
